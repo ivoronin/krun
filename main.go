@@ -15,7 +15,7 @@ type KrunOptions struct {
 	ServiceAccount string   `arg:"-s,--service-account,help:Service account to use"`
 	Timeout        int64    `arg:"-t,help:Timeout to wait for pod to start" default:"300"`
 	Verbose        bool     `arg:"-v,help:Verbose output"`
-	Labels         []string `arg:"-l,help:Labels to add to the pod (key=value)"`
+	Labels         []string `arg:"-l,help:Labels to add to the pod" placeholder:"KEY=VALUE"`
 	Tolerations    []string `arg:"-T,--toleration" help:"Tolerations to add to the pod" placeholder:"KEY:VALUE:OPERATOR:EFFECT"` //nolint:lll
 	NodeSelector   []string `arg:"-N,--node-selector" help:"Node selector to add to the pod" placeholder:"KEY=VALUE"`
 	RequestsCPU    string   `arg:"-c,--requests-cpu" help:"CPU request for the container"`
@@ -23,7 +23,7 @@ type KrunOptions struct {
 	LimitsCPU      string   `arg:"-C,--limits-cpu" help:"CPU limit for the container"`
 	LimitsMem      string   `arg:"-M,--limits-memory" help:"Memory limit for the container"`
 	KeepPod        bool     `arg:"-k,help:Keep the pod after the command completes"`
-	Env            []string `arg:"-e,help:Environment variables to set in the container"`
+	Env            []string `arg:"-e,help:Environment variables to set in the container" placeholder:"KEY=VALUE"`
 	Command        string   `arg:"positional" default:"/bin/sh" help:"Command to run in the container"`
 	Args           []string `arg:"positional" help:"Arguments to pass to the command"`
 }

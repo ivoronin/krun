@@ -4,7 +4,11 @@ A command-line tool to easily run one-off commands in Kubernetes pods interactiv
 Think of it as `kubectl run` on steroids
 
 ```
-Usage: krun --image IMAGE [--namespace NAMESPACE] [--service-account SERVICE-ACCOUNT] [--timeout TIMEOUT] [--verbose] [--labels LABELS] [--toleration KEY:VALUE:OPERATOR:EFFECT] [--node-selector KEY=VALUE] [--requests-cpu REQUESTS-CPU] [--requests-memory REQUESTS-MEMORY] [--limits-cpu LIMITS-CPU] [--limits-memory LIMITS-MEMORY] [--keeppod] [--env ENV] [COMMAND [ARGS [ARGS ...]]]
+Usage: krun --image IMAGE [--namespace NAMESPACE]  [--service-account SERVICE-ACCOUNT]
+[--timeout TIMEOUT]  [--verbose] [--labels KEY=VALUE] [--toleration KEY:VALUE:OPERATOR:EFFECT]
+[--node-selector KEY=VALUE]  [--requests-cpu REQUESTS-CPU] [--requests-memory REQUESTS-MEMORY]
+[--limits-cpu LIMITS-CPU] [--limits-memory LIMITS-MEMORY] [--keeppod] [--env KEY=VALUE]
+[COMMAND [ARGS [ARGS ...]]]
 
 Positional arguments:
   COMMAND                Command to run in the container
@@ -20,8 +24,8 @@ Options:
   --timeout TIMEOUT, -t TIMEOUT
                          Timeout to wait for pod to start [default: 300]
   --verbose, -v          Verbose output
-  --labels LABELS, -l LABELS
-                         Labels to add to the pod (key=value)
+  --labels KEY=VALUE, -l KEY=VALUE
+                         Labels to add to the pod
   --toleration KEY:VALUE:OPERATOR:EFFECT, -T KEY:VALUE:OPERATOR:EFFECT
                          Tolerations to add to the pod
   --node-selector KEY=VALUE, -N KEY=VALUE
@@ -35,6 +39,7 @@ Options:
   --limits-memory LIMITS-MEMORY, -M LIMITS-MEMORY
                          Memory limit for the container
   --keeppod, -k          Keep the pod after the command completes
-  --env ENV, -e ENV      Environment variables to set in the container
+  --env KEY=VALUE, -e KEY=VALUE
+                         Environment variables to set in 
+the container
   --help, -h             display this help and exit
-```
