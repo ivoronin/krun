@@ -5,7 +5,7 @@ Think of it as `kubectl run` on steroids
 
 ```
 Usage: krun --image IMAGE [--namespace NAMESPACE]  [--service-account SERVICE-ACCOUNT]
-[--timeout TIMEOUT]  [--verbose] [--labels KEY=VALUE] [--toleration KEY:VALUE:OPERATOR:EFFECT]
+[--timeout TIMEOUT]  [--verbose] [--labels KEY=VALUE] [--toleration KEY:OPERATOR:VALUE:EFFECT]
 [--node-selector KEY=VALUE]  [--requests-cpu REQUESTS-CPU] [--requests-memory REQUESTS-MEMORY]
 [--limits-cpu LIMITS-CPU] [--limits-memory LIMITS-MEMORY] [--keeppod] [--env KEY=VALUE]
 [COMMAND [ARGS [ARGS ...]]]
@@ -26,7 +26,7 @@ Options:
   --verbose, -v          Verbose output
   --labels KEY=VALUE, -l KEY=VALUE
                          Labels to add to the pod
-  --toleration KEY:VALUE:OPERATOR:EFFECT, -T KEY:VALUE:OPERATOR:EFFECT
+  --toleration KEY:OPERATOR:VALUE:EFFECT, -T KEY:OPERATOR:VALUE:EFFECT
                          Tolerations to add to the pod
   --node-selector KEY=VALUE, -N KEY=VALUE
                          Node selector to add to the pod
