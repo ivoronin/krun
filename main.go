@@ -16,7 +16,7 @@ type KrunOptions struct {
 	Timeout        int64    `arg:"-t,help:Timeout to wait for pod to start" default:"300"`
 	Verbose        bool     `arg:"-v,help:Verbose output"`
 	Labels         []string `arg:"-l,help:Labels to add to the pod" placeholder:"KEY=VALUE"`
-	Tolerations    []string `arg:"-T,--toleration" help:"Tolerations to add to the pod" placeholder:"KEY:VALUE:OPERATOR:EFFECT"` //nolint:lll
+	Tolerations    []string `arg:"-T,--toleration" help:"Tolerations to add to the pod" placeholder:"KEY:OPERATOR:VALUE:EFFECT"` //nolint:lll
 	NodeSelector   []string `arg:"-N,--node-selector" help:"Node selector to add to the pod" placeholder:"KEY=VALUE"`
 	RequestsCPU    string   `arg:"-c,--requests-cpu" help:"CPU request for the container"`
 	RequestsMem    string   `arg:"-m,--requests-memory" help:"Memory request for the container"`
