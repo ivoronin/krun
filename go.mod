@@ -4,9 +4,9 @@ go 1.22.4
 
 require (
 	github.com/alexflint/go-arg v1.5.1
-	k8s.io/api v0.31.2
-	k8s.io/apimachinery v0.31.2
-	k8s.io/client-go v0.31.2
+	k8s.io/api v0.31.3
+	k8s.io/apimachinery v0.31.3
+	k8s.io/client-go v0.31.3
 	k8s.io/kubectl v0.31.2
 )
 
