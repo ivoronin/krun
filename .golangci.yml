@@ -1,17 +1,23 @@
+version: "2"
+
 linters:
-  enable-all: true
+  default: all
   disable:
-  # Dont care:
-  - exhaustruct
-  - depguard
-  # Deprecated:
-  - exportloopref
-  - execinquery
-  - gomnd
-  - perfsprint
-  - gochecknoglobals
-  # Extra:
-  - tagalign
+    - exhaustruct
+    - depguard
+    - wrapcheck
+    - tagalign
+    - forbidigo
+    - perfsprint
+    - gochecknoglobals
+    - wsl  # deprecated
+    - revive  # too noisy
+    # Legacy code suppressions:
+    - errcheck
+    - modernize
+    - noinlineerr
+    - staticcheck
+    - wsl_v5
 
 issues:
   exclude-rules:

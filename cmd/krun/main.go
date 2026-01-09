@@ -9,6 +9,8 @@ import (
 	"github.com/alexflint/go-arg"
 )
 
+var version = "dev"
+
 type KrunOptions struct {
 	Image          string   `arg:"-i,required,help:Container image to use"`
 	Namespace      string   `arg:"-n,help:Kubernetes namespace to launch pod in"`
@@ -26,6 +28,10 @@ type KrunOptions struct {
 	Env            []string `arg:"-e,help:Environment variables to set in the container" placeholder:"KEY=VALUE"`
 	Command        string   `arg:"positional" default:"/bin/sh" help:"Command to run in the container"`
 	Args           []string `arg:"positional" help:"Arguments to pass to the command"`
+}
+
+func (KrunOptions) Version() string {
+	return version
 }
 
 func main() {
